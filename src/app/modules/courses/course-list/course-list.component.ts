@@ -3,6 +3,7 @@ import { CourseListService } from "./course-list.service";
 import { CourseService } from "../course.service";
 import { filter } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 @Component({
   selector: 'app-course-list',
@@ -23,11 +24,24 @@ export class CourseComponent implements OnInit {
   @Output()
   public courseEvent: EventEmitter<any> = new EventEmitter();
 
-  constructor(private courseListService: CourseListService, private readonly courseService: CourseService, private aRoute: ActivatedRoute) {}
+  constructor(private readonly http: HttpClient, private courseListService: CourseListService, private readonly courseService: CourseService, private aRoute: ActivatedRoute) {}
 
   public courseList: any[] = [];
 
   ngOnInit(): void {
+
+    this.http.get("https://api.api-ninjas.com/v1/cats?name=abyssinian").subscribe({
+      next: (val) =>{
+        console.log("value : ", val);
+      },
+      error : (err: HttpErrorResponse )=>{
+        debugger
+        console.log("API error : ", err)
+        
+      }
+    })
+
+
    this.aRoute.data.subscribe((value) =>{
     const {courseValue} = value ;
     this.childData = courseValue;

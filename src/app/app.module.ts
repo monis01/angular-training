@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './modules/courses/course-list/course-list.component';
 import { CourseModule } from './modules/courses/courses.module';
 import { RouterModule, Routes } from '@angular/router';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -22,6 +24,7 @@ const routes: Routes = [
     AppComponent,
   ],
   imports: [
+    CoreModule,
     RouterModule.forRoot(routes),
     BrowserModule
   ],
