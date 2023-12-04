@@ -1,13 +1,13 @@
 <div class="container">
     <div class="course-container" *ngFor="let course of courseList;let i = index">
-        <h2>{{course.name}}</h2>
+        <h2 highlight>{{course.name}}</h2>
         <p>{{course.author}}</p>
         <p>
             <span *ngFor="let tag of course.tags">
                 {{tag}}
             </span>
         </p>
-        <p>
+        <p highlight>
             {{course.price}}
         </p>
         <button style="margin: 7px;" (click)="addToCart(course)"> Add to cart</button>
@@ -15,5 +15,3 @@
         <button style="margin: 7px;" (click)="showCourseDetail(course)"> Show More</button>
     </div>
 </div>
-
-<!-- <h1>Courses</h1> -->

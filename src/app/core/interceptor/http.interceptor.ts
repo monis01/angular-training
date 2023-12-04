@@ -8,6 +8,7 @@ export class HTTPInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
     return next.handle(request)
     .pipe(catchError((err: any)=>{
         return throwError(() => { 

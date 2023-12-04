@@ -8,6 +8,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { CourseResolver } from "./course.resolver";
 import { HighlightDirective } from "src/app/shared/directives/highlight.directive";
 import { CoreModule } from "src/app/core/core.module";
+import { SharedModule } from "src/app/shared/shared.module";
 
 const routes: Routes = [
     // {
@@ -25,7 +26,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    imports:[CommonModule, RouterModule.forChild(routes)],
+    imports:[CommonModule, RouterModule.forChild(routes), SharedModule],
     declarations: [CourseComponent, CourseDetailComponent],
     exports: [],
     providers: [CourseResolver]
