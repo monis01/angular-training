@@ -1,0 +1,32 @@
+<form [formGroup]="addCourseForm" (ngSubmit)="createCourse(addCourseForm)">
+    <div class="form-control">
+        <label>
+            Name :
+            <input formControlName="name" placeholder="Course name"/>
+        </label>
+        <div *ngIf="addCourseForm.get('name')?.invalid && (addCourseForm.get('name')?.dirty || addCourseForm.get('name')?.touched)">
+            Please provide a name.
+          </div>
+    </div>
+    <div class="form-control">
+        <label>
+            Author :
+            <input formControlName="author" placeholder="Author name"/>
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Description :
+            <textarea formControlName="description" placeholder="Enter Description"></textarea>
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Price :
+            <input formControlName="price" placeholder="Price"/>
+        </label>
+    </div>
+    <div>
+        <button type="submit">Add Course</button>
+    </div>
+</form>

@@ -30,16 +30,16 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get("https://api.api-ninjas.com/v1/cats?name=abyssinian").subscribe({
-      next: (val) =>{
-        console.log("value : ", val);
-      },
-      error : (err: HttpErrorResponse )=>{
-        debugger
-        console.log("API error : ", err)
+    // this.http.get("https://api.api-ninjas.com/v1/cats?name=abyssinian").subscribe({
+    //   next: (val) =>{
+    //     console.log("value : ", val);
+    //   },
+    //   error : (err: HttpErrorResponse )=>{
         
-      }
-    })
+    //     console.log("API error : ", err)
+        
+    //   }
+    // })
 
 
    this.aRoute.data.subscribe((value) =>{

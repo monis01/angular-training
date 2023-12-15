@@ -9,25 +9,27 @@ import { CourseResolver } from "./course.resolver";
 import { HighlightDirective } from "src/app/shared/directives/highlight.directive";
 import { CoreModule } from "src/app/core/core.module";
 import { SharedModule } from "src/app/shared/shared.module";
+import { AddCourseComponent } from "./add-course/add-course.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
-    // {
-    //     path: "", redirectTo: "list", pathMatch:"full"
-    // },
     {
-        
+        path: "detail", component: CourseDetailComponent
+    },
+    {
+        path: "add", component: AddCourseComponent
+    },
+    {   
         path: ":id",
         component : CourseComponent, 
         resolve : {courseValue: CourseResolver}
     },
-    {
-        path: "detail", component: CourseDetailComponent
-    }
+ 
 ]
 
 @NgModule({
-    imports:[CommonModule, RouterModule.forChild(routes), SharedModule],
-    declarations: [CourseComponent, CourseDetailComponent],
+    imports:[CommonModule, RouterModule.forChild(routes), SharedModule, ReactiveFormsModule],
+    declarations: [CourseComponent, CourseDetailComponent, AddCourseComponent],
     exports: [],
     providers: [CourseResolver]
 })
