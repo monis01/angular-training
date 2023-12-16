@@ -11,6 +11,7 @@ import { CoreModule } from "src/app/core/core.module";
 import { SharedModule } from "src/app/shared/shared.module";
 import { AddCourseComponent } from "./add-course/add-course.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { I18nPipe } from "src/app/shared/pipes/i18n.pipe";
 
 const routes: Routes = [
     {
@@ -29,7 +30,7 @@ const routes: Routes = [
 
 @NgModule({
     imports:[CommonModule, RouterModule.forChild(routes), SharedModule, ReactiveFormsModule],
-    declarations: [CourseComponent, CourseDetailComponent, AddCourseComponent],
+    declarations: [CourseComponent, CourseDetailComponent, AddCourseComponent, I18nPipe],
     exports: [],
     providers: [CourseResolver]
 })

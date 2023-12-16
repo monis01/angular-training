@@ -1,7 +1,7 @@
 <div class="container">
     <div class="course-container" *ngFor="let course of courseList;let i = index">
         <h2 highlight>{{course.name}}</h2>
-        <p>{{course.author}}</p>
+        <p>{{course.author | i18n : "Oxford" | lowercase}}</p>
         <p>
             <span *ngFor="let tag of course.tags">
                 {{tag}}
