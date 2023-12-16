@@ -6,12 +6,15 @@
         </label>
         <div *ngIf="addCourseForm.get('name')?.invalid && (addCourseForm.get('name')?.dirty || addCourseForm.get('name')?.touched)">
             Please provide a name.
-          </div>
+        </div>
     </div>
     <div class="form-control">
         <label>
             Author :
             <input formControlName="author" placeholder="Author name"/>
+            <div *ngIf="addCourseForm.get('author')?.invalid && (addCourseForm.get('author')?.dirty || addCourseForm.get('author')?.touched)">
+                Please provide a Author's name.
+            </div>
         </label>
     </div>
     <div class="form-control">
