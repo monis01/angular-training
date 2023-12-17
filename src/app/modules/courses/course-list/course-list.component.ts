@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { CourseListService } from "./course-list.service";
 import { CourseService } from "../course.service";
 import { filter } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 @Component({
@@ -24,7 +24,7 @@ export class CourseComponent implements OnInit {
   @Output()
   public courseEvent: EventEmitter<any> = new EventEmitter();
 
-  constructor(private readonly http: HttpClient, private courseListService: CourseListService, private readonly courseService: CourseService, private aRoute: ActivatedRoute) {}
+  constructor(private router: Router,private readonly http: HttpClient, private courseListService: CourseListService, private readonly courseService: CourseService, private aRoute: ActivatedRoute) {}
 
   public courseList: any[] = [];
 
@@ -40,6 +40,8 @@ export class CourseComponent implements OnInit {
         
     //   }
     // })
+
+    // this.router.events.subscribe
 
 
    this.aRoute.data.subscribe((value) =>{

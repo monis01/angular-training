@@ -1,4 +1,4 @@
-// RXJS
+// RXJS [1]
 
 /**
     RxJS is an acronym that stands for Reactive Extension for JavaScript. 
@@ -32,6 +32,8 @@
     2. data arriving from the server
     3. timeouts getting triggered
 */
+
+
 
 /**
   In order for the notion of stream to be useful to build a program, we need a way to create streams, 
@@ -83,6 +85,8 @@ This is because observables are cold, or do not activate a producer (like wiring
     // for now, let's just log the event on each click
     const subscription = myObservable.subscribe(event => console.log(event));
 
+    const subscription1 = myObservable.subscribe(event => console.log(event));
+
 
     ALSO
 
@@ -114,4 +118,50 @@ This is because observables are cold, or do not activate a producer (like wiring
 
 /**
     By default, a subscription creates a one on one, one-sided conversation between the observable and observer. This is also known as unicasting
+*/
+
+// https://academind.com/tutorials/callbacks-vs-promises-vs-rxjs-vs-async-awaits
+// https://www.learnrxjs.io/learn-rxjs/concepts/rxjs-primer
+// https://blog.angular-university.io/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/
+
+// *************************************************************************************************************************************************************
+
+// Change Detection [1]
+
+/**
+    Out of the box, Angular provides two different change detection strategies: Default and OnPush. 
+    Each strategy has its own advantages, but sometimes it is easy to miss a nifty optimization opportunity if you stick to the default strategy.
+
+    Data flow being at the center of almost all things.
+
+*/
+
+/**
+  1. When you change any of your models, Angular detects the changes and immediately updates the views and this is the change detection
+  2. The purpose of this mechanism is to make sure the underlying views are always in sync with their corresponding models
+
+  A model in Angular can change as a result of any of the following scenarios:
+
+    DOM events (click, hover over, etc.)
+
+    AJAX requests
+
+    Timers (setTimer(), setInterval())
+
+    1. All Angular apps are made up of a hierarchical tree of components. At runtime, Angular creates a separate change detector class for every component in the tree, 
+       which then eventually forms a hierarchy of change detectors similar to the hierarchy tree of components.
+    
+    2. Whenever change detection is triggered, Angular walks down this tree of change detectors to determine if any of them have reported changes
+
+    3. The change detection cycle is always performed once for every detected change and starts from the root change detector and goes all the way down in a sequential fashion
+
+    4. This sequential design choice is nice because it updates the model in a predictable way since we know component data can only come from its parent.
+
+    5. The change detectors provide a way to keep track of the component’s previous and current states as well as its structure in order to report changes to Angular
+       If Angular gets the report from a change detector, it instructs the corresponding component to re-render and update the DOM accordingly.
+    
+*/
+
+/**
+  
 */

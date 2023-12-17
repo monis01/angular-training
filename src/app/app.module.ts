@@ -7,6 +7,8 @@ import { CourseModule } from './modules/courses/courses.module';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ParentComponent } from './modules/change-detection/parent.component';
+import { ChildComponent } from './modules/change-detection/child-component/child-component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     CoreModule,

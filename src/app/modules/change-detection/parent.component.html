@@ -1,0 +1,8 @@
+<div>
+    <input #inputAquaticCreature type="text" placeholder="Enter a new creature">
+</div>
+
+<button (click)="addAquaticCreature(inputAquaticCreature.value)">Add creature</button>
+
+<app-child [data]="aquaticCreatures"></app-child>
+
