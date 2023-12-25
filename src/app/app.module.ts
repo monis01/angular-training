@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ParentComponent } from './modules/change-detection/parent.component';
 import { ChildComponent } from './modules/change-detection/child-component/child-component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
   imports: [
     CoreModule,
     RouterModule.forRoot(routes),
-    BrowserModule
+    BrowserModule,
+    ModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(){
+    console.log("Online chnagesssss")
+  }
+
   public counter = 0;
   public coursePriceList = [
     {

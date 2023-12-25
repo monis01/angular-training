@@ -2,16 +2,24 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './parent.component.html'
+  templateUrl: './parent.component.html',
+
 })
 export class ParentComponent {
   aquaticCreatures = ['shark', 'dolphin', 'octopus'];
 
-  addAquaticCreature(newAquaticCreature : any) {
-    // debugger
-    // this.aquaticCreatures.push(newAquaticCreature);
+  constructor(){}
 
+  addAquaticCreature(newAquaticCreature : any) {
+    // Normal change detection
+    this.aquaticCreatures.push(newAquaticCreature);
+
+    // Change detection strategy on push
     // this.aquaticCreatures = [...this.aquaticCreatures, newAquaticCreature]
+  }
+
+  foo(){
+    
   }
 }
 

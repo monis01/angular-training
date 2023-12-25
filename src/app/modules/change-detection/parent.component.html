@@ -1,8 +1,45 @@
-<div>
+<!-- <div>
     <input #inputAquaticCreature type="text" placeholder="Enter a new creature">
 </div>
 
-<button (click)="addAquaticCreature(inputAquaticCreature.value)">Add creature</button>
+<button (click)="addAquaticCreature(inputAquaticCreature.value)">Add creature</button> -->
 
-<app-child [data]="aquaticCreatures"></app-child>
+<!-- <app-child [data]="aquaticCreatures">
+    <button (click)="foo()">Hello from parent</button>
+    
+</app-child> -->
 
+
+<app-modal [title]="'ENter your name'">
+  <form>
+    <input type="text" />
+  </form>
+  <div>
+    <button>Save</button>
+    <button>Cancel</button>
+  </div>
+</app-modal>
+
+
+<app-modal [title]="'Confirm Delete'">
+   <p>Are you sure? </p>
+    <div>
+      <button>Delete</button>
+      
+    </div>
+  </app-modal>
+  
+
+  <app-modal [title]="'Prove you are not rObot'">
+    <div>
+      <img src="abc.com" />
+      <img src="abc.com" />
+      <img src="zxs.com" />
+   
+    </div>
+
+    <div>
+       <button>Confirm</button>
+       
+     </div>
+   </app-modal>
