@@ -1,0 +1,3 @@
+/**
+ * Bind, call and apply
+*/
